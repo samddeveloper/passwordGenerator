@@ -1,0 +1,287 @@
+
+body,html {
+    background-color: #16111a;
+    color:white;
+    font-family: "Roboto Mono", monospace, sans-serif;
+    font-weight: 400;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    max-width: 400px; 
+    margin: 0 auto; 
+    min-height: 100vh;
+  }
+
+
+  .title {
+    font-weight:350;
+    font-size: 1.2em;
+  }
+  .containerHead {
+   display: flex;
+   align-items: center;
+   padding: 20px;
+   width: 100%;
+   background-color:#291d35;
+   position: relative;
+  }
+
+  .copy-icon {
+    height: 2em;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+  }
+
+
+
+
+  
+.copy-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(0, 0, 0);
+  color:#a638f6;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  z-index: 9999;
+}
+
+  span {
+    font-size: 25px;
+  }
+
+  .passwordForm {
+    text-align: left; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    background-color:#2d2039;
+    position: relative;
+  }
+
+  #sliderValue {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    color: #a638f6;
+    font-size:35px ;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, #a638f6 0%, #a638f6 50%, #2a2438 50%, #2a2438 100%);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+  
+
+ 
+  .checkbox label {
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;  
+
+  }
+
+  .checkbox label::before {
+    content:"";
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top:  0;
+    border: 2px solid #ffffff;
+    padding: 5px;
+  }
+
+  .checkbox input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .checkbox input[type="checkbox"]:checked + label::before {
+    background-color: #a638f6;
+    border-color: transparent;
+    box-shadow:#a738f646
+  }
+
+  .checkbox input[type="checkbox"]:checked + label::after {
+    content: ""; 
+    display: inline-block;
+    width:96%;
+    height: 70%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14.18" height="11.024" viewBox="0 0 14.18 11.024"><path id="Path_266" data-name="Path 266" d="M16750.131,552.211l3.861,3.863,8.9-8.9" transform="translate(-16749.424 -546.464)" fill="none" stroke="%23000" stroke-width="2"/></svg>');
+    background-size:contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  
+  .strengthBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: #a638f6;
+    gap: 10px;
+    margin-top: 30px;
+}
+  #strength {
+    color: rgb(255, 255, 255);
+    margin-right: 13px;
+  }
+
+  #strengthText {
+    color: black;
+  }
+  
+  .small-rectangles {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px; 
+  }
+  
+  .small-rectangles div {
+    width: 13px; 
+    height:45px; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0); 
+    margin:  3px; 
+    border: 1px solid white;
+    box-sizing: border-box;
+  }
+
+  #generateButton {
+    padding: 24px; 
+    background-color: #a638f6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+  #generateButton:hover {
+    background-color: #511a78;
+  }
+
+  .logo {
+    margin-top: 10px;
+  }
+  
+  
+  
+  @media screen and (max-width: 375px) {
+    .container {
+       
+        height: auto; /* Sätt höjden till automatisk för att innehållet ska anpassa sig */
+        max-width: 90%; /* Anpassa bredden för mindre skärmar */
+        margin-top: -20px; /* Flytta upp containern */
+        padding: 10px;
+        
+    }
+
+    .containerHead {
+        flex-direction: column; /* Ändra riktningen för att stapla element vertikalt */
+        align-items: flex-start; /* Justera alignment för bättre visning på mindre skärmar */
+    }
+
+    .copy-icon {
+        margin-left: 10px; /* Lägg till lite mellanrum mellan text och ikon */
+    }
+
+    .passwordForm {
+        padding: 10px; /* Minska padding för mindre skärmar */
+    }
+
+    .checkbox label {
+        padding-left: 20px; /* Justera label-padding för mindre skärmar */
+    }
+
+    .logo {
+        max-width: 150px; /* Anpassa storlek på loggan för mindre skärmar */
+    }
+    .title {
+      font-size: 0.9em;
+
+    }
+}
+
+
+
+
+  @media screen and (max-width: 768px) {
+    .container {
+        padding: 20px; /* Justera padding för mindre enheter */
+    }
+
+    .containerHead {
+     padding: 15px
+    }
+
+    .passwordForm {
+        padding: 15px; /* Justera padding för mindre enheter */
+    }
+
+    #sliderValue {
+        padding: 15px; /* Justera padding för mindre enheter */
+        
+    }
+
+    input[type="range"] {
+        height: 10px; /* Justera höjden på slidern för mindre enheter */
+    }
+
+    .checkbox label {
+        padding-left: 30px; /* Justera vänster padding för kryssrutor för mindre enheter */
+    }
+
+    
+}
+
+
+
+    
+
+
